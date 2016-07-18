@@ -25,7 +25,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Kx5-0k-BeY"/>
                                         </constraints>
-                                        <state key="normal" title="Add task">
+                                        <state key="normal" title="Add to-do">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -185,7 +185,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB5-TP-VBm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To-do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WB5-TP-VBm">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -300,7 +300,7 @@
                             <constraint firstItem="LQ2-IJ-SIb" firstAttribute="top" secondItem="S3a-6F-EmY" secondAttribute="bottom" constant="8" id="SCw-GY-k2c"/>
                             <constraint firstItem="BzC-dI-IRt" firstAttribute="trailing" secondItem="S3a-6F-EmY" secondAttribute="trailing" id="b9U-VJ-b58"/>
                             <constraint firstItem="bHe-gU-HNO" firstAttribute="top" secondItem="S3a-6F-EmY" secondAttribute="bottom" constant="12" id="c7X-ds-Yfr"/>
-                            <constraint firstItem="S3a-6F-EmY" firstAttribute="leading" secondItem="WB5-TP-VBm" secondAttribute="trailing" constant="50" id="c9b-Wx-Jhk"/>
+                            <constraint firstItem="S3a-6F-EmY" firstAttribute="leading" secondItem="WB5-TP-VBm" secondAttribute="trailing" constant="40" id="c9b-Wx-Jhk"/>
                             <constraint firstItem="BzC-dI-IRt" firstAttribute="height" secondItem="S3a-6F-EmY" secondAttribute="height" id="cgF-Ry-WqV"/>
                             <constraint firstItem="Qqj-Dc-f7W" firstAttribute="centerY" secondItem="Jo8-et-g8t" secondAttribute="centerY" id="djB-Cg-o96"/>
                             <constraint firstItem="S3a-6F-EmY" firstAttribute="centerY" secondItem="WB5-TP-VBm" secondAttribute="centerY" id="eVw-88-3Sd"/>
