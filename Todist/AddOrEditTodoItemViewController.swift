@@ -67,6 +67,12 @@ class AddOrEditTodoItemViewController: UIViewController {
     }
     
     @IBAction func save() {
+        let errorText = validate()
+        if !errorText.isEmpty {
+            displayAlert(errorText)
+            return
+        }
+        
         let progressionStatus: ProgressStatus = ProgressStatus(rawValue: progress.selectedRowInComponent(0))!
         let newTodoItem: TodoItem = TodoItem(displayDescription: displayDescription.text!, notes: notes.text, dueDate: deadline.date, progression: progressionStatus, isUrgent: isUrgent.on, isImportant: isImportant.on)
         
@@ -77,6 +83,19 @@ class AddOrEditTodoItemViewController: UIViewController {
         }
         
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func validate() -> String {
+        if displayDescription.text!.isEmpty { return "Please name your to-do" }
+        if deadlineTextField.text!.isEmpty { return "Please set a deadline" }
+        return ""
+    }
+    
+    func displayAlert(message: String) {
+        let alertController: UIAlertController = UIAlertController(title: "Wait!", message: message, preferredStyle: .Alert)
+        let okayAction: UIAlertAction = UIAlertAction(title: "Okay! I'll fix it.", style: .Cancel, handler: nil)
+        alertController.addAction(okayAction)
+        self.presentViewController(alertController, animated: false, completion: nil)
     }
 }
 
