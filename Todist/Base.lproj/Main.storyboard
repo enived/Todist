@@ -226,15 +226,21 @@
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BzC-dI-IRt" userLabel="DatePickerView">
                                 <subviews>
-                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="23t-9Z-pgO">
-                                        <frame key="frameInset" minX="-88" minY="-93" height="216" maxX="-87"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="490495261.92559898">
-                                            <!--2016-07-18 00:41:01 +0000-->
-                                        </date>
-                                    </datePicker>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OdC-24-Yau">
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="editDateTextFieldWithSender:" destination="48W-uy-RVc" eventType="editingDidBegin" id="S8r-vY-40a"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="OdC-24-Yau" firstAttribute="centerY" secondItem="BzC-dI-IRt" secondAttribute="centerY" id="9Cy-6T-IAZ"/>
+                                    <constraint firstItem="OdC-24-Yau" firstAttribute="height" secondItem="BzC-dI-IRt" secondAttribute="height" id="JUw-rU-KW1"/>
+                                    <constraint firstItem="OdC-24-Yau" firstAttribute="width" secondItem="BzC-dI-IRt" secondAttribute="width" id="WbA-yp-wiu"/>
+                                    <constraint firstItem="OdC-24-Yau" firstAttribute="centerX" secondItem="BzC-dI-IRt" secondAttribute="centerX" id="X12-eS-meB"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo8-et-g8t">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -270,7 +276,7 @@
                                     <action selector="save" destination="48W-uy-RVc" eventType="touchUpInside" id="XBa-B3-tJc"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-29-uNy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-29-uNy">
                                 <color key="backgroundColor" red="0.97783162526659551" green="1" blue="0.8554021856870353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="U2T-gZ-EO6"/>
@@ -320,7 +326,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="deadline" destination="23t-9Z-pgO" id="Y3K-FN-5p4"/>
+                        <outlet property="deadlineTextField" destination="OdC-24-Yau" id="c8X-yv-lqm"/>
                         <outlet property="displayDescription" destination="S3a-6F-EmY" id="UUK-BP-PhP"/>
                         <outlet property="isImportant" destination="LQ2-IJ-SIb" id="jja-rk-PrE"/>
                         <outlet property="isUrgent" destination="Qlb-Da-xBW" id="3sV-Pp-CvF"/>

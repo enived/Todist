@@ -15,6 +15,7 @@
 		CD6706331D3C270900ECBAE8 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6706321D3C270900ECBAE8 /* TodoItem.swift */; };
 		CD6706351D3C33F000ECBAE8 /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6706341D3C33F000ECBAE8 /* TodoItemTableViewCell.swift */; };
 		CDEA82C71D3C735A00E993F3 /* TodoListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA82C61D3C735A00E993F3 /* TodoListDataStore.swift */; };
+		CDEA82C91D3D4B8100E993F3 /* DateToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA82C81D3D4B8100E993F3 /* DateToString.swift */; };
 		CDF00F201D3C49DD00BDBACE /* AddOrEditTodoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF00F1F1D3C49DD00BDBACE /* AddOrEditTodoItemViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		CD6706321D3C270900ECBAE8 /* TodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
 		CD6706341D3C33F000ECBAE8 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = "<group>"; };
 		CDEA82C61D3C735A00E993F3 /* TodoListDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListDataStore.swift; sourceTree = "<group>"; };
+		CDEA82C81D3D4B8100E993F3 /* DateToString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateToString.swift; sourceTree = "<group>"; };
 		CDF00F1F1D3C49DD00BDBACE /* AddOrEditTodoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditTodoItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 			children = (
 				CD6706311D3C26D800ECBAE8 /* entity */,
 				CD016F051D3C24CA00CD5C7A /* AppDelegate.swift */,
+				CDEA82C81D3D4B8100E993F3 /* DateToString.swift */,
 				CD016F071D3C24CA00CD5C7A /* TodoListViewController.swift */,
 				CD016F091D3C24CA00CD5C7A /* Main.storyboard */,
 				CD016F0C1D3C24CA00CD5C7A /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 				CDEA82C71D3C735A00E993F3 /* TodoListDataStore.swift in Sources */,
 				CD6706331D3C270900ECBAE8 /* TodoItem.swift in Sources */,
 				CD6706351D3C33F000ECBAE8 /* TodoItemTableViewCell.swift in Sources */,
+				CDEA82C91D3D4B8100E993F3 /* DateToString.swift in Sources */,
 				CD016F061D3C24CA00CD5C7A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

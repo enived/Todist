@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Todist/TodoListViewController.swift"
-            timestampString = "490553765.78867"
+            filePath = "Todist/AddOrEditTodoItemViewController.swift"
+            timestampString = "490557420.903511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "tableView(_:heightForRowAtIndexPath:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "editDateTextFieldWithSender(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Todist/AddOrEditTodoItemViewController.swift"
+            timestampString = "490557029.39017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "datePickerValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

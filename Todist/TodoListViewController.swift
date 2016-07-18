@@ -42,6 +42,7 @@ class TodoListViewController: UIViewController {
         shouldHideCompletedTodo = !shouldHideCompletedTodo
         tableView.reloadData()
     }
+    
     func updateProgressBar() {
         let completionFloat = TodoListDataStore.getInstance().completionPercentage()
         progressBar.setProgress(completionFloat, animated: true)
@@ -85,7 +86,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
 
         cell.displayDescription.text = todoItem.displayDescription
         cell.progress.text = todoItem.progression.description
-        cell.deadline.text = stringFromNSDate(todoItem.deadline)
+        cell.deadline.text = DateToString.convert(todoItem.deadline)
         cell.priorityLabel.text = todoItem.priority.description
         if todoItem.progression == .Complete {
             cell.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(CGFloat(0.5))
@@ -106,13 +107,6 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         case .NotImportantNotUrgent:
             return UIColor.grayColor().colorWithAlphaComponent(CGFloat(0.2))
         }
-    }
-    
-    func stringFromNSDate(date: NSDate) -> String {
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-        dateFormatter.timeStyle = .ShortStyle
-        return dateFormatter.stringFromDate(date)
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -15,9 +15,10 @@ class AddOrEditTodoItemViewController: UIViewController {
     @IBOutlet weak var notes: UITextView!
     @IBOutlet weak var isUrgent: UISwitch!
     @IBOutlet weak var isImportant: UISwitch!
-    @IBOutlet weak var deadline: UIDatePicker!
+    @IBOutlet weak var deadlineTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
+    var deadline: UIDatePicker = UIDatePicker()
     var index: Int?
     var todoItem: TodoItem?
     override func viewDidLoad() {
@@ -31,13 +32,25 @@ class AddOrEditTodoItemViewController: UIViewController {
             isUrgent.on = todoItem!.isUrgent
             isImportant.on = todoItem!.isImportant
             deadline.date = todoItem!.deadline
+            deadlineTextField.text = DateToString.convert(deadline.date)
             notes.text = todoItem!.notes
             progress.selectRow(todoItem!.progression.rawValue, inComponent: 0, animated: false)
         }
-        
-        // Keyboard was not disappearing on
+        // Keyboard was not disappearing on outside tap
         let tapAnywhere: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AddOrEditTodoItemViewController.dismissKeyboard))
         view.addGestureRecognizer(tapAnywhere)
+    }
+    
+    // the redundant with sender appears to be a bug with xcode 8 beta 2
+    @IBAction func editDateTextFieldWithSender(sender: UITextField) {
+        deadline.minuteInterval = 15
+        deadline.datePickerMode = .DateAndTime
+        sender.inputView = deadline
+        deadline.addTarget(self, action: #selector(AddOrEditTodoItemViewController.datePickerValueChanged(_:)), forControlEvents: .ValueChanged)
+    }
+
+    func datePickerValueChanged(sender: UIDatePicker) {
+        deadlineTextField.text = DateToString.convert(sender.date)
     }
     
     func dismissKeyboard() {
