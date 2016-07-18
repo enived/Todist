@@ -121,21 +121,27 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         addOrEditTodoItemVC.index = indexPath.row
         self.presentViewController(addOrEditTodoItemVC, animated: true, completion: nil)
     }
-    
+
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let completeAction: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "Done!") { (action: UITableViewRowAction, index:NSIndexPath) in
-            TodoListDataStore.getInstance().todoList[index.row].progression = .Complete
-            self.updateProgressBar()
-            tableView.reloadData()
-        }
-        completeAction.backgroundColor = UIColor.greenColor()
+       
+        
         let deleteAction: UITableViewRowAction = UITableViewRowAction(style: .Destructive, title: "Remove") { (action:UITableViewRowAction, index:NSIndexPath) in
             TodoListDataStore.getInstance().removeTodoItem(index.row)
             self.updateProgressBar()
             tableView.reloadData()
         }
         deleteAction.backgroundColor = UIColor.redColor()
-        return [deleteAction,completeAction]
+        var editActions: [UITableViewRowAction] = [deleteAction]
+        if TodoListDataStore.getInstance().todoList[indexPath.row].progression != .Complete {
+            let completeAction: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "Done!") { (action: UITableViewRowAction, index:NSIndexPath) in
+                TodoListDataStore.getInstance().todoList[index.row].progression = .Complete
+                self.updateProgressBar()
+                tableView.reloadData()
+            }
+            completeAction.backgroundColor = UIColor.greenColor()
+            editActions.append(completeAction)
+        }
+        return editActions
     }
     
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
