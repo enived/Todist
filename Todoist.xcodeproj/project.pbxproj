@@ -19,7 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CD016F021D3C24CA00CD5C7A /* Todist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD016F021D3C24CA00CD5C7A /* Todoist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD016F051D3C24CA00CD5C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD016F071D3C24CA00CD5C7A /* TodoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		CD016F0A1D3C24CA00CD5C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		CD016F031D3C24CA00CD5C7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD016F021D3C24CA00CD5C7A /* Todist.app */,
+				CD016F021D3C24CA00CD5C7A /* Todoist.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,9 +87,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD016F011D3C24CA00CD5C7A /* Todist */ = {
+		CD016F011D3C24CA00CD5C7A /* Todoist */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD016F141D3C24CA00CD5C7A /* Build configuration list for PBXNativeTarget "Todist" */;
+			buildConfigurationList = CD016F141D3C24CA00CD5C7A /* Build configuration list for PBXNativeTarget "Todoist" */;
 			buildPhases = (
 				CD016EFE1D3C24CA00CD5C7A /* Sources */,
 				CD016EFF1D3C24CA00CD5C7A /* Frameworks */,
@@ -99,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = Todist;
+			name = Todoist;
 			productName = Todist;
-			productReference = CD016F021D3C24CA00CD5C7A /* Todist.app */;
+			productReference = CD016F021D3C24CA00CD5C7A /* Todoist.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -122,7 +122,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CD016EFD1D3C24CA00CD5C7A /* Build configuration list for PBXProject "Todist" */;
+			buildConfigurationList = CD016EFD1D3C24CA00CD5C7A /* Build configuration list for PBXProject "Todoist" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -135,7 +135,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD016F011D3C24CA00CD5C7A /* Todist */,
+				CD016F011D3C24CA00CD5C7A /* Todoist */,
 			);
 		};
 /* End PBXProject section */
@@ -306,7 +306,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD016EFD1D3C24CA00CD5C7A /* Build configuration list for PBXProject "Todist" */ = {
+		CD016EFD1D3C24CA00CD5C7A /* Build configuration list for PBXProject "Todoist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD016F121D3C24CA00CD5C7A /* Debug */,
@@ -315,7 +315,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD016F141D3C24CA00CD5C7A /* Build configuration list for PBXNativeTarget "Todist" */ = {
+		CD016F141D3C24CA00CD5C7A /* Build configuration list for PBXNativeTarget "Todoist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD016F151D3C24CA00CD5C7A /* Debug */,

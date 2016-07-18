@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD016F011D3C24CA00CD5C7A"
-               BuildableName = "Todist.app"
-               BlueprintName = "Todist"
-               ReferencedContainer = "container:Todist.xcodeproj">
+               BuildableName = "Todoist.app"
+               BlueprintName = "Todoist"
+               ReferencedContainer = "container:Todoist.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD016F011D3C24CA00CD5C7A"
-            BuildableName = "Todist.app"
-            BlueprintName = "Todist"
-            ReferencedContainer = "container:Todist.xcodeproj">
+            BuildableName = "Todoist.app"
+            BlueprintName = "Todoist"
+            ReferencedContainer = "container:Todoist.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD016F011D3C24CA00CD5C7A"
-            BuildableName = "Todist.app"
-            BlueprintName = "Todist"
-            ReferencedContainer = "container:Todist.xcodeproj">
+            BuildableName = "Todoist.app"
+            BlueprintName = "Todoist"
+            ReferencedContainer = "container:Todoist.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD016F011D3C24CA00CD5C7A"
-            BuildableName = "Todist.app"
-            BlueprintName = "Todist"
-            ReferencedContainer = "container:Todist.xcodeproj">
+            BuildableName = "Todoist.app"
+            BlueprintName = "Todoist"
+            ReferencedContainer = "container:Todoist.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
