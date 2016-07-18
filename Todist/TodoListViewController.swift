@@ -23,8 +23,7 @@ class TodoListViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         TodoListDataStore.getInstance().sort()
-        let completionFloat = TodoListDataStore.getInstance().completionPercentage()
-        progressBar.setProgress(completionFloat, animated: true)
+        updateProgressBar()
         tableView.reloadData()
     }
 
@@ -43,7 +42,10 @@ class TodoListViewController: UIViewController {
         shouldHideCompletedTodo = !shouldHideCompletedTodo
         tableView.reloadData()
     }
-    
+    func updateProgressBar() {
+        let completionFloat = TodoListDataStore.getInstance().completionPercentage()
+        progressBar.setProgress(completionFloat, animated: true)
+    }
 }
 
 extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -123,11 +125,13 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let completeAction: UITableViewRowAction = UITableViewRowAction(style: .Normal, title: "Done!") { (action: UITableViewRowAction, index:NSIndexPath) in
             TodoListDataStore.getInstance().todoList[index.row].progression = .Complete
+            self.updateProgressBar()
             tableView.reloadData()
         }
         completeAction.backgroundColor = UIColor.greenColor()
         let deleteAction: UITableViewRowAction = UITableViewRowAction(style: .Destructive, title: "Remove") { (action:UITableViewRowAction, index:NSIndexPath) in
             TodoListDataStore.getInstance().removeTodoItem(index.row)
+            self.updateProgressBar()
             tableView.reloadData()
         }
         deleteAction.backgroundColor = UIColor.redColor()
