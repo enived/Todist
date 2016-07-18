@@ -57,10 +57,19 @@ class TodoItem {
 
 
 enum Priority : Int {
-    case ImportantUrgent = 1
-    case ImportantNotUrgent = 2
-    case NotImportantUrgent = 3
-    case NotImportantNotUrgent = 4
+    case ImportantUrgent
+    case ImportantNotUrgent
+    case NotImportantUrgent
+    case NotImportantNotUrgent
+    
+    var description: String {
+        switch self {
+        case .ImportantUrgent : return "Important Urgent"
+        case .ImportantNotUrgent : return "Important"
+        case .NotImportantUrgent : return "Urgent"
+        case .NotImportantNotUrgent : return "Eliminate"
+        }
+    }
 }
 
 enum ProgressStatus : Int  {

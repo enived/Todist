@@ -12,6 +12,7 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var displayDescription: UILabel!
     @IBOutlet weak var deadline: UILabel!
     @IBOutlet weak var progress: UILabel!
+    @IBOutlet weak var priorityLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

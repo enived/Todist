@@ -9,7 +9,7 @@
         <!--Home-->
         <scene sceneID="iGl-Yq-V4t">
             <objects>
-                <viewController title="Home" id="EuM-Xb-HG8" customClass="TodoListViewController" customModule="Todist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" id="EuM-Xb-HG8" customClass="TodoListViewController" customModule="Todoist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HH2-tC-VE9"/>
                         <viewControllerLayoutGuide type="bottom" id="mpo-7P-sUL"/>
@@ -20,10 +20,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgg-QO-7fV" userLabel="BottomView">
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAS-fo-4Vs">
-                                        <frame key="frameInset" minX="267" minY="10" width="100" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAS-fo-4Vs">
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Kx5-0k-BeY"/>
+                                        </constraints>
                                         <state key="normal" title="Add task">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -31,35 +32,61 @@
                                             <action selector="addNewTodo" destination="EuM-Xb-HG8" eventType="touchUpInside" id="VPU-Jl-2Vp"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9f-UC-g3h" userLabel="See completed">
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="wHC-IY-zTX"/>
+                                        </constraints>
+                                        <state key="normal" title="Toggle Complete">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleShowCompletedTodos" destination="EuM-Xb-HG8" eventType="touchUpInside" id="hmW-VV-Dhn"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="DAS-fo-4Vs" secondAttribute="bottom" constant="10" id="CNs-GV-m82"/>
+                                    <constraint firstAttribute="trailing" secondItem="DAS-fo-4Vs" secondAttribute="trailing" constant="8" id="Spm-Cx-pfy"/>
+                                    <constraint firstItem="z9f-UC-g3h" firstAttribute="leading" secondItem="dgg-QO-7fV" secondAttribute="leading" constant="8" id="TFW-a6-DHG"/>
                                     <constraint firstAttribute="height" constant="50" id="f46-GX-8hN"/>
+                                    <constraint firstItem="z9f-UC-g3h" firstAttribute="centerY" secondItem="DAS-fo-4Vs" secondAttribute="centerY" id="wT1-Sa-jTx"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EfY-F5-iTq" userLabel="ProgressView">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Progress to completion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH1-e2-O3f">
-                                        <frame key="frameInset" minX="8" minY="8" width="327" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-uQ-KA0">
+                                        <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="150" id="0wc-lj-YuR"/>
+                                        </constraints>
+                                    </progressView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress to completion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IH1-e2-O3f">
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Ohq-uQ-KA0" firstAttribute="top" secondItem="IH1-e2-O3f" secondAttribute="bottom" constant="5" id="C9e-6K-xDm"/>
+                                    <constraint firstItem="Ohq-uQ-KA0" firstAttribute="centerX" secondItem="EfY-F5-iTq" secondAttribute="centerX" id="EMf-6j-L84"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ohq-uQ-KA0" secondAttribute="bottom" constant="15" id="Nd4-qR-vKD"/>
+                                    <constraint firstItem="IH1-e2-O3f" firstAttribute="centerX" secondItem="EfY-F5-iTq" secondAttribute="centerX" id="aMZ-sw-yi2"/>
+                                </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3CO-cn-3k7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3CO-cn-3k7">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="517" id="6nG-AL-35s"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="todoItemTableViewCell" id="ez6-8Z-ozL" customClass="TodoItemTableViewCell" customModule="Todist" customModuleProvider="target">
-                                        <frame key="frameInset" minY="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="todoItemTableViewCell" rowHeight="45" id="ez6-8Z-ozL" customClass="TodoItemTableViewCell" customModule="Todoist" customModuleProvider="target">
+                                        <frame key="frameInset" minY="28" width="375" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ez6-8Z-ozL" id="Pp8-YL-xvQ">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYT-bG-kQp">
@@ -77,10 +104,20 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ8-uC-yWw">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="ynd-1w-3yX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7Jj-Yb-wtE" firstAttribute="centerY" secondItem="rYT-bG-kQp" secondAttribute="centerY" id="Eg4-Db-aIp"/>
-                                                <constraint firstItem="EKl-NJ-W8E" firstAttribute="top" secondItem="7Jj-Yb-wtE" secondAttribute="bottom" id="cPu-xV-Vqn"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LZ8-uC-yWw" secondAttribute="bottom" constant="5" id="N4G-GV-kmR"/>
+                                                <constraint firstItem="LZ8-uC-yWw" firstAttribute="leading" secondItem="rYT-bG-kQp" secondAttribute="leading" id="PK6-0G-SMQ"/>
+                                                <constraint firstItem="EKl-NJ-W8E" firstAttribute="centerY" secondItem="LZ8-uC-yWw" secondAttribute="centerY" id="sgW-o9-50l"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -92,6 +129,7 @@
                                         <connections>
                                             <outlet property="deadline" destination="EKl-NJ-W8E" id="cji-vC-EFf"/>
                                             <outlet property="displayDescription" destination="rYT-bG-kQp" id="KDf-KO-F7k"/>
+                                            <outlet property="priorityLabel" destination="LZ8-uC-yWw" id="s6T-WU-ndJ"/>
                                             <outlet property="progress" destination="7Jj-Yb-wtE" id="SHj-oM-3tU"/>
                                         </connections>
                                     </tableViewCell>
@@ -101,10 +139,11 @@
                                     <outlet property="delegate" destination="EuM-Xb-HG8" id="uLs-BR-2TP"/>
                                 </connections>
                             </tableView>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ohq-uQ-KA0">
-                                <frame key="frameInset" minX="112" minY="62" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To-do list" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed4-Ns-d2l">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,11 +151,13 @@
                             <constraint firstItem="3CO-cn-3k7" firstAttribute="top" secondItem="EfY-F5-iTq" secondAttribute="bottom" id="2aM-nw-zZ4"/>
                             <constraint firstItem="EfY-F5-iTq" firstAttribute="top" secondItem="HH2-tC-VE9" secondAttribute="bottom" id="7c4-FY-dCd"/>
                             <constraint firstItem="3CO-cn-3k7" firstAttribute="width" secondItem="qWQ-ga-a9D" secondAttribute="width" id="BKH-SV-8mb"/>
+                            <constraint firstItem="Ed4-Ns-d2l" firstAttribute="centerX" secondItem="IH1-e2-O3f" secondAttribute="centerX" id="CUk-j3-dc6"/>
                             <constraint firstItem="3CO-cn-3k7" firstAttribute="leading" secondItem="dgg-QO-7fV" secondAttribute="leading" id="Nja-hg-gDw"/>
                             <constraint firstItem="EfY-F5-iTq" firstAttribute="leading" secondItem="qWQ-ga-a9D" secondAttribute="leadingMargin" id="PfD-rv-11N"/>
                             <constraint firstItem="dgg-QO-7fV" firstAttribute="width" secondItem="qWQ-ga-a9D" secondAttribute="width" id="XxB-gC-pNS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EfY-F5-iTq" secondAttribute="trailing" id="c1L-Qi-NOi"/>
                             <constraint firstItem="3CO-cn-3k7" firstAttribute="centerX" secondItem="EfY-F5-iTq" secondAttribute="centerX" id="lJE-iA-QNV"/>
+                            <constraint firstItem="Ed4-Ns-d2l" firstAttribute="top" secondItem="EfY-F5-iTq" secondAttribute="top" constant="10" id="soD-1I-bxh"/>
                             <constraint firstItem="3CO-cn-3k7" firstAttribute="trailing" secondItem="dgg-QO-7fV" secondAttribute="trailing" id="vwD-4i-g8q"/>
                             <constraint firstItem="dgg-QO-7fV" firstAttribute="top" secondItem="3CO-cn-3k7" secondAttribute="bottom" constant="8" id="yuC-CD-HVm"/>
                         </constraints>
@@ -134,7 +175,7 @@
         <!--Add Or Edit Todo Item View Controller-->
         <scene sceneID="GHo-iX-z2S">
             <objects>
-                <viewController storyboardIdentifier="AddOrEditTodoItem" id="48W-uy-RVc" customClass="AddOrEditTodoItemViewController" customModule="Todist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddOrEditTodoItem" id="48W-uy-RVc" customClass="AddOrEditTodoItemViewController" customModule="Todoist" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pWk-Jn-y3M"/>
                         <viewControllerLayoutGuide type="bottom" id="42R-0R-5Ld"/>
@@ -229,7 +270,7 @@
                                     <action selector="save" destination="48W-uy-RVc" eventType="touchUpInside" id="XBa-B3-tJc"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add any notes here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-29-uNy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x0Q-29-uNy">
                                 <color key="backgroundColor" red="0.97783162526659551" green="1" blue="0.8554021856870353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="U2T-gZ-EO6"/>

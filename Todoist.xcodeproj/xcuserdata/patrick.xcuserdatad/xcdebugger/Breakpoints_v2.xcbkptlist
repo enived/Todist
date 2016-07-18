@@ -9,46 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Todist/TodoItem.swift"
-            timestampString = "490481497.415628"
+            filePath = "Todist/TodoListViewController.swift"
+            timestampString = "490552725.063118"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
-            landmarkName = "TodoItem"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todoist.TodoItem.__deallocating_deinit"
-                  moduleName = "Todoist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/patrick/Documents/workspace/Todist/Todist/TodoItem.swift"
-                  timestampString = "490549026.036331"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Todoist.TodoItem.deinit"
-                  moduleName = "Todoist"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/patrick/Documents/workspace/Todist/Todist/TodoItem.swift"
-                  timestampString = "490549026.037758"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "tableView(tableView:heightForRowAtIndexPath:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
