@@ -22,7 +22,12 @@ class TodoListDataStore {
     
     
     func sort() {
-        todoList.sortInPlace { $0.deadline.compare($1.deadline) == .OrderedAscending }
+        todoList.sortInPlace { (todo1, todo2) -> Bool in
+            if todo1.priority == todo2.priority {
+                return todo1.deadline.compare(todo2.deadline) == .OrderedAscending
+            }
+            return todo1.priority.rawValue < todo2.priority.rawValue
+        }
     }
     
     func addTodoItem(newItem: TodoItem) {

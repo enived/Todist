@@ -53,16 +53,6 @@ class TodoItem {
         }
         return .NotImportantNotUrgent
     }
-    
-    func compare(otherTodoItem: TodoItem) -> Int  {
-        if otherTodoItem.priority.rawValue < self.priority.rawValue {
-            return 1
-        } else if otherTodoItem.priority.rawValue > self.priority.rawValue {
-            return -1
-        }
-        return 0
-    }
-    
 }
 
 
