@@ -12,7 +12,7 @@ private var _instance: TodoListDataStore?
 class TodoListDataStore {
     
     // default sample data
-    var todoList: [TodoItem] = [TodoItem(displayDescription: "Todo item test first", notes: "This is a test for the notes section", dueDate: NSDate(), progression: .InProgress, isUrgent: false, isImportant: true),TodoItem(displayDescription: "Todo item test second", notes: "This is a test for the notes section", dueDate: NSDate(), progression: .NotStarted, isUrgent: true, isImportant: true), TodoItem(displayDescription: "Example completed task", notes: "this task was completed", dueDate: NSDate(), progression: .Complete, isUrgent: true, isImportant: true)]
+    var todoList: [TodoItem] = [TodoItem(displayDescription: "This is an over due task", notes: "This is a test for the notes section", dueDate: NSDate(), progression: .InProgress, isUrgent: false, isImportant: true),TodoItem(displayDescription: "This task is due tomorrow", notes: "", dueDate: NSDate().dateByAddingTimeInterval(NSTimeInterval(86400)), progression: .NotStarted, isUrgent: true, isImportant: true), TodoItem(displayDescription: "Example completed task", notes: "this task was completed", dueDate: NSDate(), progression: .Complete, isUrgent: true, isImportant: true)]
     class func getInstance() -> TodoListDataStore {
         if _instance == nil {
             _instance = TodoListDataStore()

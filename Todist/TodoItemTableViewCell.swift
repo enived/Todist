@@ -13,7 +13,8 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var deadline: UILabel!
     @IBOutlet weak var progress: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
-    
+    @IBOutlet weak var hurryFlame: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

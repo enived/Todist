@@ -13,7 +13,7 @@ class TodoListViewController: UIViewController {
     @IBOutlet weak var addTask: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var progressBar: UIProgressView!
-
+    
     var shouldHideCompletedTodo = false
     
     override func viewDidLoad() {
@@ -87,6 +87,7 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.displayDescription.text = todoItem.displayDescription
         cell.progress.text = todoItem.progression.description
         cell.deadline.text = DateToString.convert(todoItem.deadline)
+        cell.hurryFlame.hidden = shouldHidePastDueHurryUpFlame(todoItem)
         cell.priorityLabel.text = todoItem.priority.description
         if todoItem.progression == .Complete {
             cell.backgroundColor = UIColor.greenColor().colorWithAlphaComponent(CGFloat(0.5))
@@ -94,6 +95,13 @@ extension TodoListViewController: UITableViewDelegate, UITableViewDataSource {
             cell.backgroundColor = determineCellBackgroundColor(todoItem.priority)
         }
         return cell
+    }
+    
+    func shouldHidePastDueHurryUpFlame(todoItem: TodoItem) -> Bool {
+        if todoItem.priority == .NotImportantNotUrgent { return true }
+        if todoItem.progression == .Complete { return true }
+        if todoItem.deadline.compare(NSDate()) == .OrderedAscending { return false }
+        return true
     }
     
     func determineCellBackgroundColor(priority: Priority) -> UIColor {
